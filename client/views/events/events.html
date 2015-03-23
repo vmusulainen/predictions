@@ -1,0 +1,50 @@
+<template name="eventList">
+    <div>
+        {{#each events}}
+        {{> eventItem}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="eventItem">
+    <div class="row">
+        <div>
+            <a href="{{pathFor 'eventView'}}">{{title}}</a>
+        </div>
+        <div class="col-md-3">
+            <table class="table table-bordered table-condensed">
+                <thead>
+                <tr>
+                    <th colspan="2">Buy</th>
+                    <th colspan="2">Sale</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each buyOffers}}
+                <tr>
+                    <td>{{qty}}</td>
+                    <td>{{price}}</td>
+                    <td colspan="2"></td>
+                </tr>
+                {{/each}}
+                {{#each saleOffers}}
+                <tr>
+                    <td colspan="2"></td>
+                    <td>{{price}}</td>
+                    <td>{{qty}}</td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</template>
+
+<template name="eventView">
+    <div>
+        <div>
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+</template>
