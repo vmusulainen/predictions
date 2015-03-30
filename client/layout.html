@@ -5,10 +5,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 
-<template name="main">
+
+<template name="layout">
     <div class="container">
+        {{> loginButtons}}
+    </div>
+    <div class="container">
+
         <div id="main">
-            {{> eventList}}
+            {{> yield}}
         </div>
     </div>
 </template>
