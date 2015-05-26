@@ -4,7 +4,8 @@ Template.newEvent.onRendered(function () {
 
 Template.newEvent.helpers({
     eventStates: function () {
-        return Constants.Event.States
+        var states = [];
+        return states;
     }
 });
 
@@ -18,7 +19,7 @@ Template.newEvent.events({
         newEvent.tradingStart = new Date($(event.target).find('[name="tradingStart"]').val());
         newEvent.tradingEnd = new Date($(event.target).find('[name="tradingEnd"]').val());
         newEvent.date = new Date($(event.target).find('[name="date"]').val());
-        newEvent.state = $(event.target).find('[name="state"]').val();
+        newEvent.state = Constants.Event.States.awaiting;
         newEvent.userID = Meteor.userId();
 
         console.log(newEvent);
