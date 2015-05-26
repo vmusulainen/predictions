@@ -1,0 +1,21 @@
+<template name="predictionTradeWrapper">
+    <div class="page-header">
+        <h3>{{name}}</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            {{> predictionNavigation}}
+        </div>
+
+        <div class="col-md-9">
+            {{> predictionTradeButtons}}
+            {{#if isLogged}}
+                {{> predictionTrade}}
+            {{else}}
+                <p>Sign in to start trading</p>
+            {{/if}}
+        </div>
+    </div>
+</template>
+

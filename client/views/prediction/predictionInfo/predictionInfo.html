@@ -1,0 +1,22 @@
+<template name="predictionInfo">
+    <h4>Prediction Information</h4>
+
+    <table class="table table-striped">
+        <tbody>
+        <tr>
+            <td>Trading start</td>
+            <td>{{formatTime event.tradingStart}}</td>
+        </tr>
+        <tr>
+            <td>Trading end</td>
+            <td>{{formatTime event.tradingEnd}}</td>
+        </tr>
+        <tr>
+            <td>Event date</td>
+            <td>{{formatTime event.date}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <h4>Contract details</h4>
+    {{details}}
+</template>

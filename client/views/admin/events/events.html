@@ -1,0 +1,29 @@
+<template name="adminEventList">
+    <h2>Events</h2>
+    <a href="{{pathFor 'newEvent'}}" class="btn btn-primary">New event</a>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>State</th>
+            <th>Date</th>
+            <th>Trading Start</th>
+            <th>Trading End</th>
+            <th>Predictions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each events}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{state}}</td>
+            <td>{{formatTime date}}</td>
+            <td>{{formatTime tradingStart}}</td>
+            <td>{{formatTime tradingEnd}}</td>
+            <td>{{predictionCount}}</td>
+        </tr>
+
+        {{/each}}
+        </tbody>
+    </table>
+</template>

@@ -1,0 +1,21 @@
+<template name="userShares">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Prediction</th>
+            <th>Quantity</th>
+            <th>Event Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each shares}}
+        <tr>
+            <td>{{prediction.name}}</td>
+            <td>{{quantity}}</td>
+            <td>{{formatTime event.date}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+</template>

@@ -1,114 +1,24 @@
 <template name="eventList">
-    {{#each events}}
-    {{> eventItem}}
-    {{/each}}
-</template>
-
-<template name="eventItem">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="col-md-8"><a href="{{pathFor 'eventView'}}">{{title}}</a></div>
-            <div class="col-md-2">Highest buy: {{highestBuy}}</div>
-            <div class="col-md-2">Lowest sell: {{lowestSell}}</div>
-        </div>
+    <div class="col-md-4">
+        <ul class="nav nav-pills nav-stacked">
+            {{#each events}}
+            <li>
+                <a href="#" class="event">{{name}}<span class="badge pull-right">{{predictionCount}}</span></a>
+            </li>
+            {{/each}}
+        </ul>
     </div>
-</template>
 
-<template name="eventView">
-    <div>
-        <h3>{{title}}</h3>
-        <h4>Contract info</h4>
-        <h4>Long description</h4>
-
-        <p>{{longDescription}}</p>
-
-        <h4>Current orders</h4>
-        {{> eventTopCurrentOrders}}
-
-        <a href="{{pathFor 'eventTrade'}}" class="btn btn-default">Trade</a>
-        <h4>Judging criteria</h4>
-
-        <p>{{judgingCriteria}}</p>
-    </div>
-</template>
-
-<template name="eventTopCurrentOrders">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">Current Top 10 Buy Orders</div>
-                <div class="panel-body">
-                    <table class="table">
-                        <thead>
-                        <tr><td>Quantity</td><td>Price Per Share</td></tr>
-                        </thead>
-                        <tbody>
-                        {{#each buyOrders}}
-
-                        <tr>
-                            <td>{{quantity}}</td>
-                            <td>{{price}}</td>
-                        </tr>
-
-                        {{/each}}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">Current Top 10 Sell Orders</div>
-                <div class="panel-body">
-                    <table class="table">
-                        <thead>
-                        <tr><td>Quantity</td><td>Price Per Share</td></tr>
-                        </thead>
-                        <tbody>
-                        {{#each sellOrders}}
-
-                        <tr>
-                            <td>{{quantity}}</td>
-                            <td>{{price}}</td>
-                        </tr>
-
-                        {{/each}}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    <div class="col-md-8">
+        <div class="list-group">
+            {{#each predictions}}
+            <a href="{{pathFor 'predictionInfo'}}" class="list-group-item">{{name}}
+                <a href="#" class="btn btn-danger btn-xs pull-right">Sell</a>
+                <a href="#" class="btn btn-success btn-xs pull-right">Buy</a>
+            </a>
+            {{/each}}
         </div>
     </div>
 
-</template>
-
-<template name="eventTrade">
-
-    {{> eventTopCurrentOrders}}
-
-    <form>
-        <div class="radio">
-            <label>
-                <input type="radio" name="type" id="sellType" value="sell" checked>
-                Sell
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="type" id="buyType" value="buy">
-                Buy
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="inputQuantity">Quantity</label>
-            <input type="number" class="form-control" id="inputQuantity" name="inputQuantity" placeholder="Your quantity">
-        </div>
-        <div class="form-group">
-            <label for="inputPrice">Price</label>
-            <input type="number" class="form-control" id="inputPrice" name="inputPrice" placeholder="Your price" step="0.01">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
 
 </template>

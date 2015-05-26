@@ -1,0 +1,23 @@
+<template name="adminUserList">
+    <h3>Users</h3>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Emails</th>
+            <th>Registered</th>
+            <th>Admin</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each users}}
+        <tr>
+            <td>{{username}}</td>
+            <td>{{emails}}</td>
+            <td>{{createdAt}}</td>
+            <td>{{isAdmin}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>

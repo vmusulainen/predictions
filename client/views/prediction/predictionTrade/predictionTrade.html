@@ -1,0 +1,78 @@
+<template name="predictionTrade">
+    <h4>Prediction Trade</h4>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+                <h4>Sell Shares</h4>
+
+                <p>Some text</p>
+
+                <div class="row">
+                    <form class="form">
+                        <div class="form-group col-md-4">
+                            <input id="sellQuantity" type="text" class="form-control" placeholder="quantity">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input id="sellPrice" type="text" class="form-control" placeholder="price">
+                        </div>
+                        <div class="col-md-4">
+                            <button id="sellButton" class="btn btn-primary">Sell</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="well">
+                <h4>Buy Shares</h4>
+
+                <p>Some text</p>
+
+                <div class="row">
+                    <form class="form">
+                        <div class="form-group col-md-4">
+                            <input id="buyQuantity" type="text" class="form-control" placeholder="quantity">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input id="buyPrice" type="text" class="form-control" placeholder="price">
+                        </div>
+                        <div class="col-md-4">
+                            <button id="buyButton" class="btn btn-primary">Buy</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{#if hasOpenedOrders}}
+    <h5>Opened orders</h5>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each openedOrders}}
+        <tr>
+            <td>{{created}}</td>
+            <td>{{type}}</td>
+            <td>{{quantity}}</td>
+            <td>{{price}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <div class="well text-center">
+        You have no open orders for this contract.
+    </div>
+    {{/if}}
+</template>
+
+

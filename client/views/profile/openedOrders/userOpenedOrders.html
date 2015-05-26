@@ -1,0 +1,26 @@
+<template name="userOpenedOrders">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Event</th>
+            <th>Prediction</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th>Event Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each openedOrders}}
+        <tr>
+            <td>{{order.event.name}}</td>
+            <td>{{order.prediction.name}}</td>
+            <td>{{order.quantity}}</td>
+            <td>{{order.price}}</td>
+            <td>{{order.type}}</td>
+            <td>{{formatTime order.event.date}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>
