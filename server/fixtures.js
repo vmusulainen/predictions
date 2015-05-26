@@ -1,6 +1,6 @@
 if (Events.find().count() == 0) {
 
-    var userID = Accounts.createUser({
+    Accounts.createUser({
         email: 'admin@gmail.com',
         password: 'abc',
         profile: {
