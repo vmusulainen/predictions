@@ -19,7 +19,7 @@ Template.newEvent.events({
         newEvent.tradingStart = new Date($(event.target).find('[name="tradingStart"]').val());
         newEvent.tradingEnd = new Date($(event.target).find('[name="tradingEnd"]').val());
         newEvent.date = new Date($(event.target).find('[name="date"]').val());
-        newEvent.state = Constants.Event.States.awaiting;
+        newEvent.state = Constants.Event.States.inactive;
         newEvent.userID = Meteor.userId();
 
         console.log(newEvent);
