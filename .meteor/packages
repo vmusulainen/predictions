@@ -7,3 +7,7 @@
 meteor-platform
 insecure
 iron:router
+autopublish
+twbs:bootstrap
+momentjs:moment
+ian:accounts-ui-bootstrap-3
