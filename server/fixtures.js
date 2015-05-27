@@ -33,6 +33,7 @@ if (Events.find().count() == 0) {
         tradingStart: new Date('2017-01-11'),
         tradingEnd: new Date('2018-05-01'),
         date: new Date('2018-05-11'),
+        state: Constants.Event.States.active
 
     });
 
@@ -40,13 +41,15 @@ if (Events.find().count() == 0) {
     predictionID = Predictions.insert({
         eventID: eventID,
         name: 'Навальный станет президентом в 2018 г.',
-        details: 'Детальные условия контракта'
+        details: 'Детальные условия контракта',
+        truly: undefined
     });
 
     Predictions.insert({
         eventID: eventID,
         name: 'Путин станет президентом в 2018 г.',
-        details: 'Детальные условия контракта'
+        details: 'Детальные условия контракта',
+        truly: undefined
     });
 
 }

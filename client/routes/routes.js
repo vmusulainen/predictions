@@ -84,6 +84,12 @@ Router.route('managePredictions', {
 
 Router.route('newPrediction', {
         path: '/admin/predictions/new',
-        template: 'newPrediction'
+        template: 'editPrediction'
     }
 );
+
+Router.route('editPrediction', {
+    path: '/predictions/:_id/edit', template: 'editPrediction', data: function () {
+        return Predictions.findOne(this.params._id);
+    }
+});
