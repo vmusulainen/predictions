@@ -12,3 +12,4 @@ twbs:bootstrap
 momentjs:moment
 ian:accounts-ui-bootstrap-3
 accounts-password
+tsega:bootstrap3-datetimepicker
