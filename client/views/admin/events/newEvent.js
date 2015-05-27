@@ -12,8 +12,6 @@ Template.newEvent.helpers({
 Template.newEvent.events({
     'submit form': function (event, ui) {
         event.preventDefault();
-
-
         var newEvent = {};
         newEvent.name = $(event.target).find('[name="name"]').val();
         newEvent.tradingStart = new Date($(event.target).find('[name="tradingStart"]').val());
@@ -21,8 +19,6 @@ Template.newEvent.events({
         newEvent.date = new Date($(event.target).find('[name="date"]').val());
         newEvent.state = Constants.Event.States.inactive;
         newEvent.userID = Meteor.userId();
-
-        console.log(newEvent);
         Events.insert(newEvent);
         Router.go('manageEvents');
     }
