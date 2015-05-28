@@ -30,7 +30,7 @@ Template.editPrediction.events({
             prediction.truly = $(event.target).find('[name="truly"]').is(":checked");
         }
         else {
-            prediction.truly = undefined
+            prediction.truly = prediction.truly
         }
         Predictions.upsert({_id: prediction._id}, prediction);
 
