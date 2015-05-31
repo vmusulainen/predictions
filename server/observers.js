@@ -14,3 +14,33 @@ Orders.find().observe({
         }
     }
 });
+
+Predictions.find().observe({
+    changed: function (newPrediction, oldPrediction) {
+
+        if (newPrediction.truly === undefined) {
+             return
+        }
+
+        var deposites = Deposites.find({predictionID: newPrediction._id}).fetch();
+        var shares = Shares.find({predictionID: newPrediction._id}).fetch();
+
+        _.each(deposites, function(aDeposite){
+            if (!newPrediction.truly) {
+                var user = Meteor.users.findOne(aDeposite.userID);
+                Market.increaseUserBalance(user, aDeposite.sum);
+            }
+            console.log('removing', aDeposite)
+            Deposites.remove(aDeposite._id);
+        });
+
+        _.each(shares, function(aShare){
+            if (newPrediction.truly) {
+                var user = Meteor.users.findOne(aShare.userID);
+                Market.increaseUserBalance(user, aShare.quantity * Constants.Shares.pricePerEach);
+            }
+            console.log('removing', aShare);
+            Shares.remove(aShare._id);
+        });
+    }
+});
