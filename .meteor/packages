@@ -15,3 +15,5 @@ tsega:bootstrap3-datetimepicker
 mizzao:bootboxjs
 nooitaf:colors
 autopublish
+sanjo:jasmine
+velocity:html-reporter
