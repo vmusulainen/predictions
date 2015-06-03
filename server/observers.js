@@ -22,7 +22,7 @@ Predictions.find().observe({
              return
         }
 
-        var deposites = Deposites.find({predictionID: newPrediction._id}).fetch();
+        var deposites = Deposits.find({predictionID: newPrediction._id}).fetch();
         var shares = Shares.find({predictionID: newPrediction._id}).fetch();
 
         _.each(deposites, function(aDeposite){
@@ -31,7 +31,7 @@ Predictions.find().observe({
                 Market.increaseUserBalance(user, aDeposite.sum);
             }
             console.log('removing', aDeposite)
-            Deposites.remove(aDeposite._id);
+            Deposits.remove(aDeposite._id);
         });
 
         _.each(shares, function(aShare){

@@ -4,7 +4,7 @@ Template.userSummary.helpers({
     },
     deposites: function () {
         var result = 0;
-        var deposites = Deposites.find({userID: Meteor.userId()});
+        var deposites = Deposits.find({userID: Meteor.userId()});
         deposites.forEach(function (each) {
             result = result + each.sum
         });

@@ -34,27 +34,9 @@ Router.route('predictionMarketDepth', {
     }
 );
 
-Router.route('userShares', {
-        path: '/profile/shares',
-        template: 'userSharesWrapper'
-    }
-);
-
-Router.route('userDeposites', {
-        path: '/profile/deposites',
-        template: 'userDepositesWrapper'
-    }
-);
-
-Router.route('userOpenedOrders', {
-        path: '/profile/openOrders',
-        template: 'userOpenedOrdersWrapper'
-    }
-);
-
-Router.route('userSummary', {
-        path: '/profile/summary',
-        template: 'userSummaryWrapper'
+Router.route('profile', {
+        path: '/profile',
+        template: 'profile'
     }
 );
 

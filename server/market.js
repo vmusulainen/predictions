@@ -12,7 +12,7 @@ Market.decreaseUserBalance = function (aUser, value) {
 
 Market.putOnPredictionDeposite = function (aUser, aPrediction, value) {
     Market.decreaseUserBalance(aUser, value);
-    Deposites.insert({userID: aUser._id, predictionID: aPrediction._id, sum: value});
+    Deposits.insert({userID: aUser._id, predictionID: aPrediction._id, sum: value});
 };
 
 Market.issueShortShares = function (aUser, prediction, qty) {
