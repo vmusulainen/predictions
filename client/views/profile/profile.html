@@ -1,7 +1,7 @@
 <template name="profile">
-    <h1>User {{currentUser.name}}</h1>
+    <h1>{{i18n "User"}}</h1>
 
-    <h2>Your balance: {{balance}}</h2>
+    <h2>{{i18n "Your Balance"}}: {{balance}}</h2>
 
     <div>&nbsp;</div>
     {{> userShares}}
@@ -14,7 +14,7 @@
 
 <template name="userShares">
     <div class="panel panel-default">
-        <div class="panel-heading"><h3 class="panel-title">Your Shares</h3></div>
+        <div class="panel-heading"><h3 class="panel-title">{{i18n "Your Shares"}}</h3></div>
         <div class="panel-body">
             <p>Some text about user's shares</p>
         </div>
@@ -22,10 +22,10 @@
         <table class="table table-condensed">
             <thead>
             <tr>
-                <th>Event</th>
-                <th>Prediction</th>
-                <th>Quantity</th>
-                <th>Event Date</th>
+                <th>{{i18n "Event"}}</th>
+                <th>{{i18n "Prediction"}}</th>
+                <th>{{i18n "Quantity"}}</th>
+                <th>{{i18n "Event Date"}}</th>
             </tr>
             </thead>
             <tbody>
@@ -45,7 +45,7 @@
 
 <template name="userDeposits">
     <div class="panel panel-default">
-        <div class="panel-heading"><h3 class="panel-title">Your Deposits</h3></div>
+        <div class="panel-heading"><h3 class="panel-title">{{i18n "Your Deposits"}}</h3></div>
         <div class="panel-body">
             <p>Some text about user's deposits</p>
         </div>
@@ -53,10 +53,10 @@
         <table class="table table-condensed">
             <thead>
             <tr>
-                <th>Event</th>
-                <th>Prediction</th>
-                <th>Sum</th>
-                <th>Event Date</th>
+                <th>{{i18n "Event"}}</th>
+                <th>{{i18n "Prediction"}}</th>
+                <th>{{i18n "Sum"}}</th>
+                <th>{{i18n "Event Date"}}</th>
             </tr>
             </thead>
             <tbody>
@@ -76,7 +76,7 @@
 
 <template name="userOpenedOrders">
     <div class="panel panel-default">
-        <div class="panel-heading"><h3 class="panel-title">Your Opened Orders</h3></div>
+        <div class="panel-heading"><h3 class="panel-title">{{i18n "Your Opened Orders"}}</h3></div>
         <div class="panel-body">
             <p>Some text about user's opened orders</p>
         </div>
@@ -84,12 +84,12 @@
         <table class="table table-condensed">
             <thead>
             <tr>
-                <th>Event</th>
-                <th>Prediction</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Type</th>
-                <th>Event Date</th>
+                <th>{{i18n "Event"}}</th>
+                <th>{{i18n "Prediction"}}</th>
+                <th>{{i18n "Quantity"}}</th>
+                <th>{{i18n "Price"}}</th>
+                <th>{{i18n "Type"}}</th>
+                <th>{{i18n "Event Date"}}</th>
             </tr>
             </thead>
             <tbody>

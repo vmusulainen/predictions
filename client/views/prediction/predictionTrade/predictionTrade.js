@@ -31,13 +31,12 @@ Template.predictionTrade.events({
 
 var sellDialog = function (user, prediction, qty, price) {
     bootbox.dialog({
-        title: 'Order Summary',
-        message: '<p> You are selling ' + qty + ' long shares for ' + price + ' m฿ each. </p>' +
-        '<p>If you don\'t have any long shares to sell when this order is executed, up to ' + qty + ' short shares will be bought for ' + (10 - price) + ' m฿ each.</p>' +
-        '<p>The order will expire at 11/30/2015 23:00.</p>',
+        title: i18n("Order Summary"),
+        message: "<p>" + i18n("You are selling N long shares for M each", qty, price) + "</p>" +
+        "<p>" + i18n("WarningAboutShortShares", qty, (10 - price)) + "</p>",
         buttons: {
             cancel: {
-                label: 'Cancel',
+                label: i18n("Cancel"),
                 className: "btn-default",
                 callback: function (ui) {
 
@@ -45,7 +44,7 @@ var sellDialog = function (user, prediction, qty, price) {
 
             },
             success: {
-                label: 'Confirm',
+                label: i18n("Confirm"),
                 className: "btn-primary",
                 callback: function (ui) {
                     var order = {
@@ -66,13 +65,12 @@ var sellDialog = function (user, prediction, qty, price) {
 
 var buyDialog = function (user, prediction, qty, price) {
     bootbox.dialog({
-        title: 'Order Summary',
-        message: '<p> You are buying ' + qty + ' long shares for ' + price + ' m฿ each. </p>' +
-        '<p> If you have short shares when this order is executed, up to ' + qty + 'short shares will be sold for ' + (10 - price) + ' m฿ each.</p>' +
-        '<p>The order is good till cancelled.</p>',
+        title: i18n("Order Summary"),
+        message: "<p>" + i18n("You are buying N long shares for M each", qty, price) + "</p>" +
+        "<p>" + i18n("WarningAboutShortSharesInOwn", qty, (10 - price)) + "</p>",
         buttons: {
             cancel: {
-                label: 'Cancel',
+                label: i18n("Cancel"),
                 className: "btn-default",
                 callback: function (ui) {
 
@@ -80,7 +78,7 @@ var buyDialog = function (user, prediction, qty, price) {
 
             },
             success: {
-                label: 'Confirm',
+                label: i18n("Confirm"),
                 className: "btn-primary",
                 callback: function (ui) {
                     var order = {
