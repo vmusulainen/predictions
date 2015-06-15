@@ -1,8 +1,8 @@
 <template name="adminPredictionList">
-    <h1>Predictions</h1>
-    <a href="{{pathFor 'newPrediction'}}" class="btn btn-primary">New Prediction</a>
+    <h1>{{i18n "Predictions"}}</h1>
+    <a href="{{pathFor 'newPrediction'}}" class="btn btn-primary">{{i18n "New prediction"}}</a>
     <table class="table table-striped table-hover">
-        <thead><tr><th>Event</th><th>Prediction</th><th>Truly</th></tr></thead>
+        <thead><tr><th>{{i18n "Event"}}</th><th>{{i18n "Prediction"}}</th><th>{{i18n "Truly"}}</th></tr></thead>
         <tbody>
         {{#each predictions}}
         <tr><td>{{eventName}}</td><td><a href="{{pathFor 'editPrediction'}}">{{name}}</a></td><td>{{truly}}</td></tr>

@@ -6,5 +6,5 @@ Template.adminPredictionList.helpers({
     truly: function(){if (this.truly === undefined) {
         return 'Not yet come'
     }
-    return this.truly ? 'came true' : 'came false' }
+    return this.truly ? i18n('came true') : i18n('came false') }
 })

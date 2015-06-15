@@ -1,10 +1,10 @@
 <template name="editPrediction">
-    <h1>{{#if this}}Edit Predictions{{else}}New Prediction{{/if}}</h1>
+    <h1>{{#if this}}{{i18n "Edit predictions"}}{{else}}{{i18n "New prediction"}}{{/if}}</h1>
 
     <form class="form-horizontal">
 
         <div class="form-group">
-            <label class="col-md-2 control-label">Event</label>
+            <label class="col-md-2 control-label">{{i18n "Event"}}</label>
 
             <div class="col-md-10">
                 <div class="input-group">
@@ -18,7 +18,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-md-2 control-label">Prediction</label>
+            <label class="col-md-2 control-label">{{i18n "Prediction"}}</label>
 
             <div class="col-md-10">
                 <input type="text" class="form-control" name="prediction" value="{{name}}">
@@ -29,21 +29,21 @@
             <div class="checkbox col-md-offset-2 col-md-5">
                 <label>
                     <input type="checkbox" name="event-occurred">
-                    Check it if prediction event occurred
+                    {{i18n "Check it if prediction event occurred"}}
                 </label>
             </div>
             <div class="checkbox col-md-5 invisible" id="truly">
                 <label>
                     <input type="checkbox" name="truly" {{predictionTruly}}>
-                    Check it if prediction came true
+                    {{i18n "Check it if prediction came true"}}
                 </label>
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <button type="cancel" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-success">OK</button>
+                <button type="cancel" class="btn btn-default">{{i18n "Cancel"}}</button>
+                <button type="submit" class="btn btn-success">{{i18n "OK"}}</button>
             </div>
         </div>
     </form>
