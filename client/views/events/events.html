@@ -13,8 +13,8 @@
         <div class="list-group">
             {{#each predictions}}
             <a href="{{pathFor 'predictionInfo'}}" class="list-group-item">{{name}}
-                <a href="#" class="btn btn-danger btn-xs pull-right">Sell</a>
-                <a href="#" class="btn btn-success btn-xs pull-right">Buy</a>
+                <a href="{{pathFor "predictionTrade"}}" class="btn btn-danger btn-xs pull-right">Sell</a>
+                <a href="{{pathFor "predictionTrade"}}" class="btn btn-success btn-xs pull-right">Buy</a>
             </a>
             {{/each}}
         </div>
