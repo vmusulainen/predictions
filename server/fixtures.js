@@ -3,27 +3,33 @@ if (Events.find().count() == 0) {
     Accounts.createUser({
         email: 'admin@gmail.com',
         password: 'abc',
+        username: 'admin',
         profile: {
             isAdmin: true,
-            account: 100
+            account: 100,
+            created: new Date()
         }
     });
 
     Accounts.createUser({
         email: 'seller@gmail.com',
         password: 'abc',
+        username: 'seller',
         profile: {
             isAdmin: false,
-            account: 100
+            account: 100,
+            created: new Date()
         }
     });
 
     Accounts.createUser({
         email: 'buyer@gmail.com',
         password: 'abc',
+        username: 'buyer',
         profile: {
             isAdmin: false,
-            account: 100
+            account: 100,
+            created: new Date()
         }
     });
 

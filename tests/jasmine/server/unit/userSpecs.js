@@ -17,7 +17,6 @@ describe('Accounts', function () {
                 password: 'password'
             });
             Meteor.users.insert({username: 'test'});
-            console.log('Users:', Meteor.users.find().fetch());
             expect(Meteor.users.findOne({_id: userId}).profile.account).toBe(100);
 
         });
