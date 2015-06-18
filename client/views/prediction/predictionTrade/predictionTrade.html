@@ -3,75 +3,75 @@
 
     <div class="row">
         <div class="col-md-6">
-            <div class="well">
+            <div class="well sell">
                 <h4>{{i18n "Sell Shares"}}</h4>
 
-                <p>Some text</p>
-
                 <div class="row">
-                    <form class="form">
+                    <form class="form sell">
                         <div class="form-group col-md-4">
-                            <input id="sellQuantity" type="text" class="form-control" placeholder="{{i18n "quantity"}}">
+                            <input type="text" class="quantity form-control"
+                                   placeholder="{{i18n "quantity"}}">
                         </div>
                         <div class="form-group col-md-4">
-                            <input id="sellPrice" type="text" class="form-control" placeholder="{{i18n "price"}}">
+                            <input type="text" class="form-control price" placeholder="{{i18n "price"}}">
                         </div>
                         <div class="col-md-4">
-                            <button id="sellButton" class="btn btn-primary">{{i18n "Sell"}}</button>
+                            <button class="btn btn-primary disabled sell">{{i18n "Sell"}}</button>
                         </div>
                     </form>
                 </div>
+                <div class="validation-error invisible text-danger">&nbsp;</div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="well">
+            <div class="well buy">
                 <h4>{{i18n "Buy Shares"}}</h4>
 
-                <p>Some text</p>
-
                 <div class="row">
-                    <form class="form">
+                    <form class="form buy">
                         <div class="form-group col-md-4">
-                            <input id="buyQuantity" type="text" class="form-control" placeholder="{{i18n "quantity"}}">
+                            <input type="text" class="form-control quantity"
+                                   placeholder="{{i18n "quantity"}}">
                         </div>
                         <div class="form-group col-md-4">
-                            <input id="buyPrice" type="text" class="form-control" placeholder="{{i18n "price"}}">
+                            <input type="text" class="form-control price" placeholder="{{i18n "price"}}">
                         </div>
                         <div class="col-md-4">
-                            <button id="buyButton" class="btn btn-primary">{{i18n "Buy"}}</button>
+                            <button class="btn btn-primary disabled buy">{{i18n "Buy"}}</button>
                         </div>
                     </form>
                 </div>
+                <div class="validation-error invisible text-danger">&nbsp;</div>
             </div>
         </div>
     </div>
 
     {{#if hasOpenedOrders}}
-    <h5>{{i18n "Opened orders"}}</h5>
-    <table class="table table-striped table-hover">
-        <thead>
-        <tr>
-            <th>{{i18n "Date"}}</th>
-            <th>{{i18n "Type"}}</th>
-            <th>{{i18n "Quantity"}}</th>
-            <th>{{i18n "Price"}}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {{#each openedOrders}}
-        <tr>
-            <td>{{formatTime created}}</td>
-            <td>{{type}}</td>
-            <td>{{quantity}}</td>
-            <td>{{price}}</td>
-        </tr>
-        {{/each}}
-        </tbody>
-    </table>
+        <h5>{{i18n "Opened orders"}}</h5>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>{{i18n "Date"}}</th>
+                <th>{{i18n "Type"}}</th>
+                <th>{{i18n "Quantity"}}</th>
+                <th>{{i18n "Price"}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each openedOrders}}
+                <tr>
+                    <td>{{formatTime created}}</td>
+                    <td>{{type}}</td>
+                    <td>{{quantity}}</td>
+                    <td>{{price}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
     {{else}}
-    <div class="well text-center">
-        {{i18n "No Opened Orders"}}
-    </div>
+        <div class="well text-center">
+            {{i18n "No Opened Orders"}}
+        </div>
     {{/if}}
 </template>
 
